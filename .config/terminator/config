@@ -1,0 +1,33 @@
+[global_config]
+  handle_size = 2
+  window_state = maximise
+  title_hide_sizetext = True
+  title_transmit_bg_color = "#26a269"
+  title_use_system_font = False
+  title_font = Fira Code Medium 11
+  line_height = 1.4
+[keybindings]
+[profiles]
+  [[default]]
+    background_darkness = 0.86
+    background_type = image
+    cursor_color = "#c64600"
+    cursor_color_fg = False
+    font = Fira Code Medium 11
+    scrollbar_position = hidden
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#0b4f25:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    use_custom_command = True
+    custom_command = /home/kusanagi/.strt.sh
+    use_system_font = False
+    use_theme_colors = True
+    bold_is_bright = True
+    background_image = /home/kusanagi/Pictures/polywog_os.jpg
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
