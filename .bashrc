@@ -18,14 +18,17 @@ alias ll='exa -al --colour=auto'
 alias ls='exa'
 alias pog='curl wttr.in'
 alias ..='cd ..'
+alias p3='python3'
 alias pacsyu='sudo pacman -Syyu'
 alias pacleanup=' sudo pacman -Rns $(pacman -Qtdq)'
 alias cat='bat'
 alias grep='ripgrep'
 # alias find='fd'
 alias os='figlet wednesday OS | lolcat'
-alias malina='ssh thjalfi@192.168.0.2'
+alias malina='ssh thjalfi@192.168.0.8'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
+alias anime='~/ani-cli/ani-cli/ani-cli'
 ####
 #
 ####
