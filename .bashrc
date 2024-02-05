@@ -1,15 +1,16 @@
-#
+ #
 # ~/.bashrc
 #
-#	                  _                     _                ___  ____  
-#	__      _____  __| |_ __   ___  ___  __| | __ _ _   _   / _ \/ ___| 
-#	\ \ /\ / / _ \/ _` | '_ \ / _ \/ __|/ _` |/ _` | | | | | | | \___ \ 
+#	                  _                     _                ___  ____
+#	__      _____  __| |_ __   ___  ___  __| | __ _ _   _   / _ \/ ___|
+#	\ \ /\ / / _ \/ _` | '_ \ / _ \/ __|/ _` |/ _` | | | | | | | \___ \
 #	 \ V  V /  __/ (_| | | | |  __/\__ \ (_| | (_| | |_| | | |_| |___) |
-#	  \_/\_/ \___|\__,_|_| |_|\___||___/\__,_|\__,_|\__, |  \___/|____/ 
-#	                                                |___/    
+#	  \_/\_/ \___|\__,_|_| |_|\___||___/\__,_|\__,_|\__, |  \___/|____/
+#	                                                |___/
 #
 
 
+eval "$(starship init bash)"
 bind "set completion-ignore-case on"
 
 alias cl='clear'
@@ -22,7 +23,7 @@ alias p3='python3'
 alias pacsyu='sudo pacman -Syyu'
 alias pacleanup=' sudo pacman -Rns $(pacman -Qtdq)'
 alias cat='bat'
-alias grep='ripgrep'
+#alias grep='ripgrep'
 # alias find='fd'
 alias os='figlet wednesday OS | lolcat'
 alias malina='ssh pi@192.168.0.3 -p 2137'
@@ -30,6 +31,12 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 alias anime='~/ani-cli/ani-cli/ani-cli'
 alias orfi='ssh s164004@orfi.uwm.edu.pl'
+alias ino='arduino-cli'
+alias hackme='sudo openvpn ~/Dokumenty/tryhackme/tryhackme_masterwloczykij.ovpn'
+alias tibia='/home/titan/Pobrane/Tibia/start-tibia-launcher.sh'
+alias jupiter='~/.local/bin/jupyter notebook ~/Dokumenty/studia/wdgm'
+alias studia='cd ~/Dokumenty/studia/'
+alias vim='nvim'
 
 
 #######################################################################
