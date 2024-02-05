@@ -1,0 +1,31 @@
+[font.bold]
+family = "Hurmit Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "Hurmit Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "Hurmit Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "Hurmit Nerd Font"
+style = "Regular"
+
+# [font.bold]
+# family = "Hermit"
+# style = "Bold"
+# 
+# [font.bold_italic]
+# family = "Hermit"
+# style = "Bold Italic"
+# 
+# [font.italic]
+# family = "Hermit"
+# style = "Italic"
+# 
+# [font.normal]
+# family = "Hermit"
+# style = "Regular"
