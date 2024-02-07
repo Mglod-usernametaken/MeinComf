@@ -23,3 +23,6 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", opts)
 --
 vim.api.nvim_set_keymap("n","<C-_>","gcc",{ noremap = false })
 vim.api.nvim_set_keymap("v","<C-_>","gcc",{ noremap = false })
+
+keymap.set("v", ">", ">gv")
+keymap.set("v", "<", "<gv")
