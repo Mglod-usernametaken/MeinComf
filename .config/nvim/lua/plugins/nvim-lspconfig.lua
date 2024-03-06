@@ -49,3 +49,33 @@ local config = function()
             },
         },
     })
+
+    local lsp_fmt_group = vim.api.nvim_create_augroup("LspFromattingGroup", {})
+    vim.api.nvim_create_atuocmd("BufWritePost", {
+        group = lsp_fmt_group,
+        callback = function()
+            local efm = vim.lsp.get_active_clients({ name = "efm" })
+
+            if vim.tbl_isempty(efm) then
+                return
+            end
+
+            vim.lsp.buf.format({ name = "efm" })
+        end,
+    })
+end
+
+return {
+    "neovim/nvim-lspconfig",
+    config = config,
+    lazy = false,
+    dependencies = {
+        "windwp/nvim-autopairs",
+        "williamboman/mason.nvim",
+        "creativenull/efmls-configs-nvim",
+    },
+}
+
+
+
+

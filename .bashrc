@@ -17,7 +17,7 @@ source ~/.config/conf-custom/secret-aliases
 #######################################################################
 
 eval "$(starship init bash)"
-# export PATH=/home/kusanagi/Documents/krypta:$PATH
+export PATH=/home/kusanagi/Documents/krypta:$PATH
 
 #######################################################################
 
