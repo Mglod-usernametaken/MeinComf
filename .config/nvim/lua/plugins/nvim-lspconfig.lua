@@ -36,7 +36,7 @@ local config = function()
             "lua",
         },
         init_options = {
-            documetFormatting = true,
+            documentFormatting = true,
             documentRangeFormatting = true,
             hover = true,
             documentSymbol = true,
@@ -51,16 +51,16 @@ local config = function()
     })
 
     local lsp_fmt_group = vim.api.nvim_create_augroup("LspFromattingGroup", {})
-    vim.api.nvim_create_atuocmd("BufWritePost", {
+    vim.api.nvim_create_autocmd("BufWritePost", {
         group = lsp_fmt_group,
         callback = function()
-            local efm = vim.lsp.get_active_clients({ name = "efm" })
+            local efm = vim.lsp.get_active_clients({"efm"})
 
             if vim.tbl_isempty(efm) then
                 return
             end
 
-            vim.lsp.buf.format({ name = "efm" })
+            vim.lsp.buf.format({"efm"})
         end,
     })
 end
@@ -75,7 +75,3 @@ return {
         "creativenull/efmls-configs-nvim",
     },
 }
-
-
-
-
