@@ -36,9 +36,14 @@ alias hackme='sudo openvpn ~/Dokumenty/tryhackme/tryhackme_masterwloczykij.ovpn'
 alias tibia='/home/titan/Pobrane/Tibia/start-tibia-launcher.sh'
 alias jupiter='~/.local/bin/jupyter notebook ~/Dokumenty/studia/wdgm'
 alias studia='cd ~/Dokumenty/studia/'
+alias pico='cd ~/Dokumenty/pico/'
 alias vim='nvim'
+alias gs='git status -s'
+alias nvim-kickstart='NVIM_APPNAME="nvim-kickstart" nvim'
 
 
+#######################################################################
+PATH=/usr/bin/nvim-linux64/bin:$PATH
 #######################################################################
 
 
