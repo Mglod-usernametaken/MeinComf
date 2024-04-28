@@ -29,3 +29,7 @@ alias v='vim'
 alias k='kubectl'
 alias kx='kubectx'
 alias kns='kubens'
+
+alias hackme='sudo openvpn ~/Dokumenty/tryhackme/tryhackme_masterwloczykij.ovpn'
+alias tibia='/home/titan/Pobrane/Tibia/start-tibia-launcher.sh'
+alias jupiter='~/.local/bin/jupyter notebook ~/Dokumenty/studia/wdgm'
