@@ -36,10 +36,10 @@ return {
 	dependencies = { "nvim-lua/plenary.nvim" },
 	config = config,
 	keys = {
-		mapvimkey("<leader>fk", "telescope keymaps", "show keymaps"),
-		mapvimkey("<leader>fh", "telescope help_tags", "show help tags"),
-		mapvimkey("<leader>ff", "telescope find_files", "find files"),
-		mapvimkey("<leader>fg", "telescope live_grep", "live grep"),
-		mapvimkey("<leader>fb", "telescope buffers", "find buffers"),
+        mapvimkey("<leader>fk", "Telescope keymaps", "show keymaps"),
+		mapvimkey("<leader>fh", "Telescope help_tags", "show help tags"),
+		mapvimkey("<leader>ff", "Telescope find_files", "find files"),
+		mapvimkey("<leader>fg", "Telescope live_grep", "live grep"),
+		mapvimkey("<leader>fb", "Telescope buffers", "find buffers"),
 	},
 }
