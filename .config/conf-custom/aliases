@@ -33,3 +33,7 @@ alias kns='kubens'
 alias hackme='sudo openvpn ~/Dokumenty/tryhackme/tryhackme_masterwloczykij.ovpn'
 alias tibia='/home/titan/Pobrane/Tibia/start-tibia-launcher.sh'
 alias jupiter='~/.local/bin/jupyter notebook ~/Dokumenty/studia/wdgm'
+alias pico='cd ~/Dokumenty/pico/'
+alias gs='git status -s'
+alias nvim-kickstart='NVIM_APPNAME="nvim-kickstart" nvim'
+
