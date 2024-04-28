@@ -7,8 +7,6 @@
 #	                                                |___/    
 
 
-bind "set completion-ignore-case on"
-
 #######################################################################
 
 source ~/.config/conf-custom/aliases
@@ -17,6 +15,7 @@ source ~/.config/conf-custom/secret-aliases
 #######################################################################
 
 eval "$(starship init bash)"
+bind "set completion-ignore-case on"
 export PATH=/home/kusanagi/Documents/krypta:$PATH
 
 #######################################################################
@@ -32,7 +31,7 @@ colors() {
 	printf "Values 40..47 are \e[43mbackground colors\e[m\n"
 	printf "Value  1 gives a  \e[1mbold-faced look\e[m\n\n"
 
-	# foreground colo
+	# foreground colors
 	for fgc in {30..37}; do
 		# background colors
 		for bgc in {40..47}; do
