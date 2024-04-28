@@ -1,0 +1,15 @@
+#! /bin/bash
+FILES=$(pwd)/*
+for j in {"pdf","mobi","iso","zip","mp4","jpg","rar","exe"}; do
+    for i in $FILES; do
+     #   echo "$(basename -- $i)"
+        if [ -f "$i" ]; then
+            if [[ "${i##*.}" == "$j" ]]; then
+                mv "$i" "$(pwd)/$j/"
+                echo "moved to $j : ${i}"
+            fi
+        fi            
+    done
+done
+
+echo "done."
