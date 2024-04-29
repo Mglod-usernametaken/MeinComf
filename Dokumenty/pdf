@@ -1,0 +1,6 @@
+#! /bin/bash
+
+input=$1
+viewer=/mnt/c/Program\ Files/Adobe/Acrobat\ DC/Acrobat/Acrobat.exe
+
+pandoc --from=gfm --to=pdf input -o ~/temp.pdf && viewer ~/temp.pdf

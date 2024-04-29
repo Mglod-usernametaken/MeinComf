@@ -1,6 +1,5 @@
 local config = function()
     local lspconfig = require("lspconfig")
-    local on_attach = require("util.lsp").on_attach
 
     local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
     for type, icon in pairs(signs) do
@@ -11,7 +10,7 @@ local config = function()
     --lua
     lspconfig.lua_ls.setup({
         --capabilities = capabilities,
-        on_attach = on_attach,
+        --on_attach = on_attach,
         settings = {
             Lua = {
                 --make the language server recognize "vim" global
@@ -27,43 +26,14 @@ local config = function()
             },
         },
     })
-    -- Python
-    lspconfig.pyright.setup({
-        --capabilities = capabilities,
-        on_attach = on_attach,
-        settings = {
-            pyright = {
-                disableOrganizeImports = false,
-                analysis = {
-                    useLibraryCodeForTypes = true,
-                    autoSearchPaths = true,
-                    diagnosticMode = "workspace",
-                    autoImportCompletions = true,
-                },
-            },
-        },
-    })
-    -- Bash
-    lspconfig.bashls.setup({
-        --capabilities = capabilities,
-        on_attlch = on_attach,
-        filetypes = { "sh", "aliasrc" },
-    })
 
     local luacheck = require("efmls-configs.linters.luacheck")
     local stylua = require("efmls-configs.formatters.stylua")
-    local flake8 = require("efmls-configs.linters.flake8")
-    local black = require("efmls-configs.formatters.black")
-    local shellcheck = require("efmls-configs.linters.shellcheck")
-    local shfmt = require("efmls-configs.formatters.shfmt")
 
     --configure efm server
     lspconfig.efm.setup({
         filetypes = {
             "lua",
-            "python",
-            "sh",
-            --"yaml",
         },
         init_options = {
             documentFormatting = true,
@@ -76,8 +46,6 @@ local config = function()
         settings = {
             languages = {
                 lua = { luacheck, stylua },
-                python = { flake8, black },
-                sh = { shellcheck, shfmt },
             },
         },
     })
