@@ -5,7 +5,7 @@ local config = function()
     local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
     for type, icon in pairs(signs) do
         local hl = "DiagnosticSign" .. type
-        vim.fn.sign_define(hl, {text = icon, texthl = hl, numhl = ""})
+        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
     --lua
@@ -20,7 +20,7 @@ local config = function()
                 },
                 workspace = {
                     library = {
-                        [vim.fn.expand ("$VIMRUNTIME/lua")] = true,
+                        [vim.fn.expand("$VIMRUNTIME/lua")] = true,
                         [vim.fn.stdpath("config") .. "/lua"] = true,
                     },
                 },
@@ -86,13 +86,13 @@ local config = function()
     vim.api.nvim_create_autocmd("BufWritePost", {
         group = lsp_fmt_group,
         callback = function()
-            local efm = vim.lsp.get_active_clients({"efm"})
+            local efm = vim.lsp.get_active_clients({ "efm" })
 
             if vim.tbl_isempty(efm) then
                 return
             end
 
-            vim.lsp.buf.format({"efm"})
+            vim.lsp.buf.format({ "efm" })
         end,
     })
 end

@@ -1,7 +1,7 @@
 return {
     "windwp/nvim-ts-autotag",
     lazy = false,
-    opts = {},
+    config = {},
     dependencies = {
         "nvim-treesitter/nvim-treesitter",
     },

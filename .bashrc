@@ -7,6 +7,8 @@
 #	                                                |___/    
 
 
+bind "set completion-ignore-case on"
+
 #######################################################################
 
 source ~/.config/conf-custom/aliases
@@ -14,13 +16,7 @@ source ~/.config/conf-custom/secret-aliases
 
 #######################################################################
 
-eval "$(starship init bash)"
-bind "set completion-ignore-case on"
-export PATH=/home/kusanagi/Documents/krypta:$PATH
-
-#######################################################################
-
-PATH=/usr/bin/nvim-linux64/bin:$PATH
+export PATH=$HOME/krypta/:${KREW_ROOT:-$HOME/.krew}/bin:/usr/local/sbin/apache-maven-3.9.6/bin/:/opt/nvim-linux64/bin/:$PATH
 
 #######################################################################
 
@@ -35,7 +31,7 @@ colors() {
 	printf "Values 40..47 are \e[43mbackground colors\e[m\n"
 	printf "Value  1 gives a  \e[1mbold-faced look\e[m\n\n"
 
-	# foreground colors
+	# foreground colo
 	for fgc in {30..37}; do
 		# background colors
 		for bgc in {40..47}; do
@@ -158,3 +154,5 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
