@@ -154,5 +154,9 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+<<<<<<< Updated upstream
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+=======
+eval "$(starship init bash)"
+>>>>>>> Stashed changes

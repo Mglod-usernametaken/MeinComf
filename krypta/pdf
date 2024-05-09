@@ -1,0 +1,11 @@
+#! /bin/bash
+
+input=$1
+viewer="/mnt/c/Program Files/Adobe/Acrobat DC/Acrobat/Acrobat.exe"
+suffix="${input#*.}"
+
+if [ "$suffix" == "pdf" ]; then
+	"$viewer" "$input"
+else
+	pandoc --pdf-engine=pdfroff -t pdf -o ~/temp.pdf "$input" && chmod 655 ~/temp.pdf && "$viewer" ~/temp.pdf
+fi
