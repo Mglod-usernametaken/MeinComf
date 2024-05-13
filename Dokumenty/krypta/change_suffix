@@ -1,9 +1,0 @@
-#! /bin/bash
-# script to change wiki files to .md
-
-f=$(find . -type f \( -name '*.wiki' -o -name '*.vimwiki' \))
-
-for file in $f; do 
-    echo $file
-    mv -- "$file" "${file%.*}.md"
-done
