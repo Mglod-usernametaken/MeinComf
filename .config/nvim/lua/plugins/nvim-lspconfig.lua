@@ -49,6 +49,12 @@ local config = function()
         on_attlch = on_attach,
         filetypes = { "sh", "aliasrc" },
     })
+    -- Yaml
+    lspconfig.yamlls.setup({
+        --capabilities = capabilities,
+        on_attach = on_attach,
+        filetypes = { "yaml", "yml", "Dockerfile" }
+    })
 
     local luacheck = require("efmls-configs.linters.luacheck")
     local stylua = require("efmls-configs.formatters.stylua")
@@ -56,6 +62,8 @@ local config = function()
     local black = require("efmls-configs.formatters.black")
     local shellcheck = require("efmls-configs.linters.shellcheck")
     local shfmt = require("efmls-configs.formatters.shfmt")
+    local prettier = require("efmls-configs.formatters.prettier")
+    local actionlint = require("efmls-configs.linters.actionlint")
 
     --configure efm server
     lspconfig.efm.setup({
@@ -63,7 +71,8 @@ local config = function()
             "lua",
             "python",
             "sh",
-            --"yaml",
+            "yaml",
+            "yml",
         },
         init_options = {
             documentFormatting = true,
@@ -78,6 +87,7 @@ local config = function()
                 lua = { luacheck, stylua },
                 python = { flake8, black },
                 sh = { shellcheck, shfmt },
+                yaml = { prettier, actionlint }
             },
         },
     })
