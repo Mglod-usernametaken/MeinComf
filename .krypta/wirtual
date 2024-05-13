@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#script starting network 'default'
+#and opening virt-manager
+
+virsh net-start default && nohup virt-manager &

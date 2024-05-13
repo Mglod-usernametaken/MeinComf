@@ -1,5 +1,5 @@
 #! /bin/bash
-FILES=$(pwd)/*
+FILES="$(pwd)/*"
 for j in {"pdf","mobi","iso","zip","mp4","jpg","rar","exe"}; do
     for i in $FILES; do
      #   echo "$(basename -- $i)"
