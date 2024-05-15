@@ -1,15 +1,23 @@
 #! /bin/bash
+
+shopt -s nullglob
 FILES="$(pwd)/*"
-for j in {"pdf","mobi","iso","zip","mp4","jpg","rar","exe"}; do
-    for i in $FILES; do
-     #   echo "$(basename -- $i)"
-        if [ -f "$i" ]; then
-            if [[ "${i##*.}" == "$j" ]]; then
-                mv "$i" "$(pwd)/$j/"
-                echo "moved to $j : ${i}"
-            fi
-        fi            
-    done
+FILETYPES=("stl" "gcode" "pdf" "mobi" "iso" "zip" "mp4" "jpg" "rar" "exe")
+for j in "${FILETYPES[@]}"; do
+
+	if [ ! -d "$j" ]; then
+		mkdir "$j" && echo "created folder $j" || echo "error creating folder $j"
+	fi
+
+	for i in $FILES; do
+		#   echo "$(basename -- $i)"
+		if [ -f "$i" ]; then
+			if [[ "${i##*.}" == "$j" ]]; then
+				mv "$i" "$(pwd)/$j/" && echo "moved to $j : ${i}" || echo "error while moving ${i} to $j"
+
+			fi
+		fi
+	done
 done
 
 echo "done."

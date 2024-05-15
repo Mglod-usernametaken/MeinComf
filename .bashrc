@@ -15,16 +15,11 @@ source ~/.config/conf-custom/secret-aliases
 #######################################################################
 
 eval "$(starship init bash)"
-<<<<<<< HEAD
-bind "set completion-ignore-case on"
-export PATH=/home/kusanagi/Documents/krypta:$PATH
-=======
 export PATH=$HOME/.krypta:$PATH
->>>>>>> 2433ec0 (chore/cleanup)
 
 #######################################################################
 
-PATH=/usr/bin/nvim-linux64/bin:$PATH
+bind "set completion-ignore-case on"
 
 #######################################################################
 
