@@ -26,3 +26,7 @@ vim.api.nvim_set_keymap("v","<C-_>","gcc",{ noremap = false })
 
 keymap.set("v", ">", ">gv")
 keymap.set("v", "<", "<gv")
+
+keymap.set("n", "<leader>`", ":FloatermNew<CR>", opts)
+keymap.set("n", "<leader>h", ":FloatermKill<CR>", opts)
+keymap.set("n", "<leader>e", ":FloatermToggle<CR>", opts)
