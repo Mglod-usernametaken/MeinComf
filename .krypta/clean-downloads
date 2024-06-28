@@ -1,5 +1,7 @@
 #! /bin/bash
 
+set -euo pipefail
+
 shopt -s nullglob
 FILES="$(pwd)/*"
 FILETYPES=("stl" "gcode" "pdf" "mobi" "iso" "zip" "mp4" "jpg" "rar" "exe")
