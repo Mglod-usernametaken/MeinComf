@@ -1,2 +1,10 @@
 #!/bin/bash
-man -k . | dmenu -l 10 -i  -nb '#2E3440' -nf '#81a1c1' -sb '#81a1c1' -sf '#2E3440' -fn 'SourceCodePro:bold:pixelsize=16'| awk '{print $1}' | xargs -r man -Tpdf | zathura - 
+
+set -euo pipefail
+
+if uname -r | grep -q microsoft; then
+	man -k . | fzf -e --prompt="szukaj:" --tiebreak=begin --layout=reverse --margin 10% --query="$1" | awk '{print $1}' | xargs -r man -Tpdf | zathura -
+
+else
+	man -k . | dmenu -l 10 -i -nb '#2E3440' -nf '#81a1c1' -sb '#81a1c1' -sf '#2E3440' -fn 'SourceCodePro:bold:pixelsize=16' | awk '{print $1}' | xargs -r man -Tpdf | zathura -
+fi

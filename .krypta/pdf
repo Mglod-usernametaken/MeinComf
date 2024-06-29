@@ -1,7 +1,14 @@
 #! /bin/bash
-if [ $# != 1 ];then
-    echo "podaj plik .md do wyświetlenia"
-    exit 1
+
+set -euo pipefail
+
+if [ $# != 1 ]; then
+	echo "podaj plik .md do wyświetlenia"
+	exit 1
 fi
 
-pandoc --pdf-engine=pdfroff -t pdf $1 | zathura - &
+if [[ "${1##*.}" == "pdf" ]]; then
+	zathura "$1" &
+else
+	pandoc --pdf-engine=pdfroff -t pdf "$1" | zathura - &
+fi
