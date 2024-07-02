@@ -5,7 +5,7 @@ return {
 		init = function()
 			vim.g.vimwiki_list = {
 				{
-					path = "/mnt/c/Users/marcin.glod/Documents/brain",
+					path ="/mnt/c/Users/marcin.glod/OneDrive - Programiści Sp. z o.o/Dokumenty/TS brain",
 					syntax = "markdown",
 					ext = ".md",
 					links_space_char = "-",

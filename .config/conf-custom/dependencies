@@ -47,3 +47,18 @@ discord
 firefox
 steam
 
+---
+
+## LSP
+
+helm_ls
+actionlint
+bashls
+black
+efm
+lua_ls
+prettier
+shellcheck
+shfmt
+stylua
+yamlls
