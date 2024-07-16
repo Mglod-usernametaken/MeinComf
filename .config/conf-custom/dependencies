@@ -14,6 +14,7 @@ zathura
 bat
 exa
 git
+kubecolor
 kubectl
 kubectx
 kubens
