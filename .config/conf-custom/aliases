@@ -6,7 +6,7 @@
 #     \_/\_/ \___|\__,_|_| |_|\___||___/\__,_|\__,_|\__, |  \___/|____/
 #
 alias cl='clear'
-alias l='exa --color=auto'
+alias l='[[ $(($RANDOM % 10)) == 0 ]] && fortune || exa --color=auto'
 alias la='exa -a --colour=auto'
 alias ll='exa -al --colour=auto'
 alias ls='exa'

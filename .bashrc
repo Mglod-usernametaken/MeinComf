@@ -16,6 +16,9 @@ source ~/.config/conf-custom/secret-aliases
 eval "$(starship init bash)"
 export PATH=$HOME/.krypta:$PATH
 export EDITOR=nvim
+HISTCONTROL=ignoredups:erasedups
+shopt -s histappend
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
 #######################################################################
 
@@ -60,4 +63,3 @@ xhost +local:root >/dev/null 2>&1
 shopt -s checkwinsize
 shopt -s expand_aliases
 # Enable history appending instead of overwriting.  #139609
-shopt -s histappend
