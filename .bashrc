@@ -16,6 +16,7 @@ source ~/.config/conf-custom/secret-aliases
 eval "$(starship init bash)"
 export PATH=$HOME/.krypta:$PATH
 export EDITOR=nvim
+export XDG_CONFIG_HOME=$HOME/.config
 
 #######################################################################
 
