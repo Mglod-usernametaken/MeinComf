@@ -1,0 +1,22 @@
+#!/bin/bash
+
+source_dir="${1:-/path/to/source}"
+target_dir="${2:-/path/to/target}"
+
+ls "$source_dir" >/tmp/source_dir
+ls "$target_dir" >/tmp/target_dir
+diff /tmp/source_dir /tmp/target_dir --color=auto
+rm /tmp/source_dir /tmp/target_dir
+echo "----"
+
+
+for file in "$source_dir"/*; do
+	filename=$(basename "$file")
+	target_file="$target_dir/$filename"
+	if [ -e "$target_file" ]; then
+		echo "Porównywanie $(basename "$file"):"
+		diff "$file" "$target_file" --color=auto -b
+	else
+		echo "Plik $target_file nie istnieje, pomijam."
+	fi
+done

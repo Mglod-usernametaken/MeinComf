@@ -28,3 +28,4 @@ colors() {
 		echo
 	done
 }
+colors
