@@ -19,6 +19,8 @@ alias pacleanup=' sudo pacman -Rns $(pacman -Qtdq)'
 # alias find='fd'
 alias os='figlet wednesday OS | lolcat'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias cs='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME status'
+
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 alias anime='~/ani-cli/ani-cli/ani-cli'
 alias nf='neofetch'
@@ -28,10 +30,9 @@ alias v='vim'
 alias k='kubecolor'
 alias kx='kubectx'
 alias kns='kubens'
-alias k9s='export KUBE_EDITOR=nvim && docker run --rm -it -v ~/.kube/config:/root/.kube/config quay.io/derailed/k9s'
+alias k9s='export KUBE_EDITOR=nvim && docker run --rm -it -v ~/.kube/config:/root/.kube/config derailed/k9s'
 
 alias hackme='sudo openvpn ~/Dokumenty/tryhackme/tryhackme_masterwloczykij.ovpn'
-alias tibia='/home/titan/Pobrane/Tibia/start-tibia-launcher.sh'
 alias jupiter='~/.local/bin/jupyter notebook ~/Dokumenty/studia/wdgm'
 alias pico='cd ~/Dokumenty/pico/'
 alias gs='git status -s'
@@ -41,3 +42,10 @@ alias nvim-kickstart='NVIM_APPNAME="nvim-kickstart" nvim'
 
 
 alias ts='cd ~/TS-bitbucket/'
+alias gfnp='git fetch && git pull'
+alias dps='docker ps -a --format "table {{.Image}}\t{{.Status}}\t{{.Names}}"|grcat ~/.grc/docker_ps.conf'
+
+
+doclog() {
+    docker logs "$1" |grcat ~/.grc/docker_logs.conf
+}
