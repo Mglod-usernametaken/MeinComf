@@ -30,7 +30,7 @@ alias v='vim'
 alias k='kubecolor'
 alias kx='kubectx'
 alias kns='kubens'
-alias k9s='export KUBE_EDITOR=nvim && docker run --rm -it -v ~/.kube/config:/root/.kube/config derailed/k9s'
+alias k9s='export KUBE_EDITOR=nvim && docker run --rm -it -v ~/.kube/config:/root/.kube/config -v ~/.config/k9s:/root/.config/k9s derailed/k9s'
 
 alias hackme='sudo openvpn ~/Dokumenty/tryhackme/tryhackme_masterwloczykij.ovpn'
 alias jupiter='~/.local/bin/jupyter notebook ~/Dokumenty/studia/wdgm'
