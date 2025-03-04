@@ -1,0 +1,15 @@
+#! /bin/bash
+# skrypt do zamiany podanego pliku w qr-code
+
+object_raw=$1
+object_dir=$1-qr
+object_b64=$1.base64
+
+base64 "$object_raw" >"$object_b64"
+mkdir "$object_dir"
+split -d -C 2500 "$object_b64" "$object_dir/split-"
+
+for i in "$object_dir"/split-*; do
+	qrencode -r "$i" -o "$i.png"
+	rm "$i"
+done
