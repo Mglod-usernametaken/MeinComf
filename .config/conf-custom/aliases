@@ -30,7 +30,7 @@ alias v='vim'
 alias k='kubecolor'
 alias kx='kubectx'
 alias kns='kubens'
-alias k9s='export KUBE_EDITOR=nvim && docker run --rm -it -v ~/.kube/config:/root/.kube/config -v ~/.config/k9s:/root/.config/k9s derailed/k9s'
+alias kys='export KUBE_EDITOR=nvim && docker run --rm -it -v ~/.kube/config:/root/.kube/config -v ~/.config/k9s:/root/.config/k9s derailed/k9s'
 
 alias hackme='sudo openvpn ~/Dokumenty/tryhackme/tryhackme_masterwloczykij.ovpn'
 alias jupiter='~/.local/bin/jupyter notebook ~/Dokumenty/studia/wdgm'
@@ -45,7 +45,8 @@ alias ts='cd ~/TS-bitbucket/'
 alias gfnp='git fetch && git pull'
 alias dps='docker ps -a --format "table {{.Image}}\t{{.Status}}\t{{.Names}}"|grcat ~/.grc/docker_ps.conf'
 
-
+alias chef='docker run -it -p 8080:80 ghcr.io/gchq/cyberchef:latest'
+alias excalidraw='docker run --rm -dit --name excalidraw -p 5000:80 excalidraw/excalidraw:latest'
 doclog() {
     docker logs "$1" |grcat ~/.grc/docker_logs.conf
 }
