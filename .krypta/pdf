@@ -10,5 +10,5 @@ fi
 if [[ "${1##*.}" == "pdf" ]]; then
 	zathura "$1" &
 else
-	pandoc --pdf-engine=pdfroff -t pdf "$1" | zathura - &
+	pandoc --pdf-engine=xelatex -V lang=pl -V mainfont="DejaVu Serif" -t pdf "$1" | zathura - &
 fi
