@@ -15,7 +15,7 @@ source ~/.config/conf-custom/secret-aliases
 
 eval "$(starship init bash)"
 export PATH=$HOME/.krypta:$PATH
-export VISUAL=nvim
+export VISUAL=/usr/bin/nvim
 export EDITOR="$VISUAL"
 HISTCONTROL=ignoredups:erasedups
 shopt -s histappend

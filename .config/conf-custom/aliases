@@ -37,6 +37,34 @@ alias jupiter='~/.local/bin/jupyter notebook ~/Dokumenty/studia/wdgm'
 alias pico='cd ~/Dokumenty/pico/'
 alias gs='git status -s'
 alias gl='git log --oneline --abbrev-commit -n 30'
+alias gb='git branch --format="%(if:equals=*)%(HEAD)%(then)active%(else)inactive%(end)|%(refname:short)|%(committerdate:relative)|%(subject)" | awk -F"|" '\''{
+  # Check if branch is active
+  is_active = ($1 == "active");
+  
+  # Branch name coloring (shifted to $2 now)
+  if ($2 ~ /^feature\//) {
+    branch="\033[32m" $2 "\033[0m";  # Green for feature branches
+  } else if ($2 ~ /^chore\//) {
+    branch="\033[33m" $2 "\033[0m";  # Yellow for chore branches
+  } else if ($2 ~ /^release\//) {
+    branch="\033[35m" $2 "\033[0m";  # Purple for release branches
+  } else if ($2 ~ /^master$/) {
+    branch="\033[31m" $2 "\033[0m";  # Red for master branch
+  } else {
+    branch=$2;  # Default, no color
+  }
+  
+  # Add bold formatting if branch is active
+  if (is_active) {
+    branch="\033[1m" branch "\033[0m";  # Bold effect
+  }
+  
+  # Time column in blue
+  time="\033[34m" $3 "\033[0m";
+  
+  printf "%-40s %-30s %s\n", branch, time, $4;
+}'\'''
+
 
 alias nvim-kickstart='NVIM_APPNAME="nvim-kickstart" nvim'
 
