@@ -39,3 +39,7 @@ opt.autochdir = false
 --opt.mouse:append('a')
 opt.clipboard:append("unnamedplus")
 opt.encoding = "UTF-8"
+
+-- Folding
+opt.foldmethod = "indent"
+opt.foldlevel = 2
