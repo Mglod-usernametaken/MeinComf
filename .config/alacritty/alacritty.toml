@@ -29,3 +29,9 @@ style = "Regular"
 # [font.normal]
 # family = "Hermit"
 # style = "Regular"
+[font]
+size = 8.5
+
+[window]
+opacity = 0.90
+blur = true

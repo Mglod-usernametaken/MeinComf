@@ -14,7 +14,7 @@ source ~/.config/conf-custom/secret-aliases
 #######################################################################
 
 eval "$(starship init bash)"
-export PATH=$HOME/.krypta:$PATH
+export PATH=$HOME/.krypta:$PATH:$HOME/.local/bin:$HOME/Documents/tools
 export VISUAL=/usr/bin/nvim
 export EDITOR="$VISUAL"
 HISTCONTROL=ignoredups:erasedups
@@ -22,10 +22,11 @@ shopt -s histappend
 PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 export HISTSIZE=10000
 export HISTFILESIZE=10000
+export XDG_CONFIG_HOME=$HOME/.config
 
 #######################################################################
 
-bind "set completion-ignore-case on"
+# bind "set completion-ignore-case on"
 
 #######################################################################
 
