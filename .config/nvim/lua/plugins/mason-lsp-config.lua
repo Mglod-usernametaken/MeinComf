@@ -1,7 +1,10 @@
 local opts = {
     ensure_installed = {
+        "bashls",
         "efm",
         "lua_ls",
+        "pyright",
+        "yamlls",
     },
     automatic_installation = true,
 }

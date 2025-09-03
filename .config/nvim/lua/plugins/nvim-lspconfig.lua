@@ -8,6 +8,16 @@ local config = function()
 		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 	end
 
+    -- vim.diagnostic.config({
+    --     virtual_text = {
+    --         prefix = '󰔰 ',
+    --         spacing = 2,
+    --     },
+    --     signs = true,
+    --     underline = true,
+    --     update_in_insert = false,
+    -- })
+
 	--lua
 	lspconfig.lua_ls.setup({
 		--capabilities = capabilities,
@@ -32,8 +42,7 @@ local config = function()
 		--capabilities = capabilities,
 		on_attach = on_attach,
 		settings = {
-			pyright = {
-				disableOrganizeImports = false,
+			python = {
 				analysis = {
 					useLibraryCodeForTypes = true,
 					autoSearchPaths = true,
@@ -46,7 +55,7 @@ local config = function()
 	-- Bash
 	lspconfig.bashls.setup({
 		--capabilities = capabilities,
-		on_attlch = on_attach,
+		on_attach = on_attach,
 		filetypes = { "sh", "aliasrc" },
 	})
 	-- Yaml
@@ -99,7 +108,7 @@ local config = function()
 	vim.api.nvim_create_autocmd("BufWritePost", {
 		group = lsp_fmt_group,
 		callback = function()
-			local efm = vim.lsp.get_clients({ "efm" })
+			local efm = vim.lsp.get_clients({ name = "efm" })
 
 			if vim.tbl_isempty(efm) then
 				return
@@ -112,7 +121,6 @@ end
 
 return {
 	"neovim/nvim-lspconfig",
-    tag = "v1.7.0",
 	config = config,
 	lazy = false,
 	dependencies = {
