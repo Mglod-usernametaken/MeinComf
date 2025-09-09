@@ -8,15 +8,15 @@ local config = function()
 		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 	end
 
-    -- vim.diagnostic.config({
-    --     virtual_text = {
-    --         prefix = '󰔰 ',
-    --         spacing = 2,
-    --     },
-    --     signs = true,
-    --     underline = true,
-    --     update_in_insert = false,
-    -- })
+	-- vim.diagnostic.config({
+	--     virtual_text = {
+	--         prefix = '󰔰 ',
+	--         spacing = 2,
+	--     },
+	--     signs = true,
+	--     underline = true,
+	--     update_in_insert = false,
+	-- })
 
 	--lua
 	lspconfig.lua_ls.setup({
@@ -52,6 +52,21 @@ local config = function()
 			},
 		},
 	})
+	-- Terraform
+	lspconfig.terraformls.setup({
+		--capabilities = capabilities,
+		on_attach = on_attach,
+		settings = {
+			terraform = {
+				analysis = {
+					useLibraryCodeForTypes = true,
+					autoSearchPaths = true,
+					diagnosticMode = "workspace",
+					autoImportCompletions = true,
+				},
+			},
+		},
+	})
 	-- Bash
 	lspconfig.bashls.setup({
 		--capabilities = capabilities,
@@ -74,6 +89,7 @@ local config = function()
 	local prettier = require("efmls-configs.formatters.prettier")
 	local actionlint = require("efmls-configs.linters.actionlint")
 	local markdownlint = require("efmls-configs.linters.markdownlint")
+	local terraform_fmt = require("efmls-configs.formatters.terraform_fmt")
 
 	--configure efm server
 	lspconfig.efm.setup({
@@ -84,6 +100,9 @@ local config = function()
 			"yaml",
 			"yml",
 			"md",
+			"tf",
+			"terraform",
+			"hcl",
 		},
 		init_options = {
 			documentFormatting = true,
@@ -100,6 +119,9 @@ local config = function()
 				sh = { shellcheck, shfmt },
 				yaml = { prettier, actionlint },
 				markdown = { prettier, markdownlint },
+				hcl = { terraform_fmt },
+				tf = { terraform_fmt },
+				terraform = { terraform_fmt },
 			},
 		},
 	})

@@ -112,18 +112,18 @@ window:
 # Font configuration
   font:
     normal:
-      family: HurmitNerdFont
+      family: "Hurmit Nerd Font Light"
       style: Regular
     bold:
-      family:  HurmitNerdFont
+      family: "Hurmit Nerd Font Light"
       style: Bold
     italic: 
-      family:  HurmitNerdFont
+      family: "Hurmit Nerd Font Light"
       style: Italic
     bold_italic:
-      family:  HurmitNerdFont
+      family: "Hurmit Nerd Font Light"
       style: Bold Italic
-  size: 9.0
+  size: 8.0
   # Normal (roman) font face
   # normal:
     # Font family
