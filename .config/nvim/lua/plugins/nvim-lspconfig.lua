@@ -1,5 +1,5 @@
 local config = function()
-	local lspconfig = require("lspconfig")
+	-- local lspconfig = require("lspconfig")
 	local on_attach = require("util.lsp").on_attach
 
 	local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
@@ -19,7 +19,7 @@ local config = function()
 	-- })
 
 	--lua
-	lspconfig.lua_ls.setup({
+	vim.lsp.config.lua_ls = {
 		--capabilities = capabilities,
 		on_attach = on_attach,
 		settings = {
@@ -36,9 +36,11 @@ local config = function()
 				},
 			},
 		},
-	})
+	}
+    vim.lsp.start(vim.lsp.config.lua_ls)
+
 	-- Python
-	lspconfig.pyright.setup({
+	vim.lsp.config.pyright = {
 		--capabilities = capabilities,
 		on_attach = on_attach,
 		settings = {
@@ -51,13 +53,16 @@ local config = function()
 				},
 			},
 		},
-	})
+	}
+    vim.lsp.start(vim.lsp.config.pyright)
+
 	-- Terraform
-	lspconfig.terraformls.setup({
+	vim.lsp.config.terraformls = {
 		--capabilities = capabilities,
 		on_attach = on_attach,
 		settings = {
 			terraform = {
+                ignoreSingleFileWarning = true,
 				analysis = {
 					useLibraryCodeForTypes = true,
 					autoSearchPaths = true,
@@ -66,19 +71,25 @@ local config = function()
 				},
 			},
 		},
-	})
+	}
+    vim.lsp.start(vim.lsp.config.terraformls)
+
 	-- Bash
-	lspconfig.bashls.setup({
+	vim.lsp.config.bashls = {
 		--capabilities = capabilities,
 		on_attach = on_attach,
 		filetypes = { "sh", "aliasrc" },
-	})
+	}
+    vim.lsp.start(vim.lsp.config.bashls)
+
 	-- Yaml
-	lspconfig.yamlls.setup({
+	vim.lsp.config.yamlls = {
 		--capabilities = capabilities,
 		on_attach = on_attach,
 		filetypes = { "yaml", "yml", "Dockerfile" },
-	})
+	}
+    vim.lsp.start(vim.lsp.config.yamlls)
+
 
 	local luacheck = require("efmls-configs.linters.luacheck")
 	local stylua = require("efmls-configs.formatters.stylua")
@@ -92,7 +103,7 @@ local config = function()
 	local terraform_fmt = require("efmls-configs.formatters.terraform_fmt")
 
 	--configure efm server
-	lspconfig.efm.setup({
+	vim.lsp.config.efm = {
 		filetypes = {
 			"lua",
 			"python",
@@ -124,7 +135,8 @@ local config = function()
 				terraform = { terraform_fmt },
 			},
 		},
-	})
+	}
+    vim.lsp.start(vim.lsp.config.efm)
 
 	local lsp_fmt_group = vim.api.nvim_create_augroup("LspFromattingGroup", {})
 	vim.api.nvim_create_autocmd("BufWritePost", {
