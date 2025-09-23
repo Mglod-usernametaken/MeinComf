@@ -56,6 +56,28 @@ local config = function()
 	}
     vim.lsp.start(vim.lsp.config.pyright)
 
+	-- Arduino
+    if vim.fn.executable("arduino-language-server") == 1 then
+        vim.lsp.config.arduino_language_server = {
+            -- capabilities = capabilities,
+            -- on_attach = on_attach,
+            default_config = {
+                cmd = {
+                    "arduino-language-server",
+                    "cli-config", "~/.arduino15/arduino-cli.yaml",
+                    "-fqbn", "arduino:avr:uno",
+                    "-cli", "arduino-cli",
+                    "-clangd", "clangd",
+                },
+                filetypes = {"arduino", "cpp"},
+                root_dir = function(fname)
+                    return vim.fn.getcwd()
+                end,
+            },
+        }
+        vim.lsp.start(vim.lsp.config.arduino_language_server)
+    end
+
 	-- Terraform
 	vim.lsp.config.terraformls = {
 		--capabilities = capabilities,
