@@ -80,3 +80,5 @@ doclog() {
     docker logs "$1" |grcat ~/.grc/docker_logs.conf
 }
 alias t='terraform'
+alias brodie-rebootson='soft-reboot'
+alias fuck-it='shutdown now'
