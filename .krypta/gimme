@@ -1,0 +1,12 @@
+#! /bin/bash
+
+VERSION=$1
+REPO=derailed/k9s
+FILE=k9s_linux_amd64.deb
+
+if [[ -z $FILE ]]; then
+	curl -s "https://api.github.com/repos/$REPO/releases/tags/$VERSION" |
+		jq -r '.assets[] | select(.name | endswith(".deb")) | .browser_download_url'
+else
+    curl -LO "https://github.com/$REPO/releases/download/$VERSION/$FILE"
+fi
