@@ -37,7 +37,7 @@ local config = function()
 			},
 		},
 	}
-    vim.lsp.start(vim.lsp.config.lua_ls)
+	vim.lsp.start(vim.lsp.config.lua_ls)
 
 	-- Python
 	vim.lsp.config.pyright = {
@@ -54,29 +54,33 @@ local config = function()
 			},
 		},
 	}
-    vim.lsp.start(vim.lsp.config.pyright)
+	vim.lsp.start(vim.lsp.config.pyright)
 
 	-- Arduino
-    if vim.fn.executable("arduino-language-server") == 1 then
-        vim.lsp.config.arduino_language_server = {
-            -- capabilities = capabilities,
-            -- on_attach = on_attach,
-            default_config = {
-                cmd = {
-                    "arduino-language-server",
-                    "cli-config", "~/.arduino15/arduino-cli.yaml",
-                    "-fqbn", "arduino:avr:uno",
-                    "-cli", "arduino-cli",
-                    "-clangd", "clangd",
-                },
-                filetypes = {"arduino", "cpp"},
-                root_dir = function(fname)
-                    return vim.fn.getcwd()
-                end,
-            },
-        }
-        vim.lsp.start(vim.lsp.config.arduino_language_server)
-    end
+	if vim.fn.executable("arduino-language-server") == 1 then
+		vim.lsp.config.arduino_language_server = {
+			-- capabilities = capabilities,
+			-- on_attach = on_attach,
+			default_config = {
+				cmd = {
+					"arduino-language-server",
+					"cli-config",
+					"~/.arduino15/arduino-cli.yaml",
+					"-fqbn",
+					"arduino:avr:uno",
+					"-cli",
+					"arduino-cli",
+					"-clangd",
+					"clangd",
+				},
+				filetypes = { "arduino", "cpp" },
+				root_dir = function(fname)
+					return vim.fn.getcwd()
+				end,
+			},
+		}
+		vim.lsp.start(vim.lsp.config.arduino_language_server)
+	end
 
 	-- Terraform
 	vim.lsp.config.terraformls = {
@@ -84,7 +88,7 @@ local config = function()
 		on_attach = on_attach,
 		settings = {
 			terraform = {
-                ignoreSingleFileWarning = true,
+				ignoreSingleFileWarning = true,
 				analysis = {
 					useLibraryCodeForTypes = true,
 					autoSearchPaths = true,
@@ -94,7 +98,7 @@ local config = function()
 			},
 		},
 	}
-    vim.lsp.start(vim.lsp.config.terraformls)
+	vim.lsp.start(vim.lsp.config.terraformls)
 
 	-- Bash
 	vim.lsp.config.bashls = {
@@ -102,7 +106,7 @@ local config = function()
 		on_attach = on_attach,
 		filetypes = { "sh", "aliasrc" },
 	}
-    vim.lsp.start(vim.lsp.config.bashls)
+	vim.lsp.start(vim.lsp.config.bashls)
 
 	-- Yaml
 	vim.lsp.config.yamlls = {
@@ -110,8 +114,7 @@ local config = function()
 		on_attach = on_attach,
 		filetypes = { "yaml", "yml", "Dockerfile" },
 	}
-    vim.lsp.start(vim.lsp.config.yamlls)
-
+	vim.lsp.start(vim.lsp.config.yamlls)
 
 	local luacheck = require("efmls-configs.linters.luacheck")
 	local stylua = require("efmls-configs.formatters.stylua")
@@ -136,6 +139,7 @@ local config = function()
 			"tf",
 			"terraform",
 			"hcl",
+			"tofu",
 		},
 		init_options = {
 			documentFormatting = true,
@@ -154,11 +158,12 @@ local config = function()
 				markdown = { prettier, markdownlint },
 				hcl = { terraform_fmt },
 				tf = { terraform_fmt },
+				tofu = { terraform_fmt },
 				terraform = { terraform_fmt },
 			},
 		},
 	}
-    vim.lsp.start(vim.lsp.config.efm)
+	vim.lsp.start(vim.lsp.config.efm)
 
 	local lsp_fmt_group = vim.api.nvim_create_augroup("LspFromattingGroup", {})
 	vim.api.nvim_create_autocmd("BufWritePost", {
