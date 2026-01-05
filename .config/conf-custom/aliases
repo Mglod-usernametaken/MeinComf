@@ -82,3 +82,4 @@ doclog() {
 alias t='terraform'
 alias brodie-rebootson='soft-reboot'
 alias fuck-it='shutdown now'
+alias fhf='history|fzf'
