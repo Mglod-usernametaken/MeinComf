@@ -64,6 +64,7 @@ bindsym $mod+d exec discord
 bindsym $mod+m exec maim -s ./Pictures/screenshot/'scr'_`date +"%Y-%m-%d-%H%M%S"`.jpg && notify-send "Screenshot" "saved to ~Pictures/Screenshot-$(date +"%Y-%m-%d-%H:%M:%S").png"
 bindsym $mod+n exec obsidian
 bindsym $mod+l exec i3lock -i ~/Pictures/wallpaper/wave.png
+# bindsym $mod+l exec ~/.config/i3/scripts/blur-lock
 #--------------------------------------------------------------------------------------
 bindsym $mod+o exec --no-startup-id dmenu_run -i -nb '#2E3440' -nf '#81a1c1' -sb '#81a1c1' -sf '#2E3440' -fn 'Hurmit Nerd Font:bold:pixelsize=24'
 
@@ -173,6 +174,7 @@ workspace $ws2 output HDMI-0
 
 assign [class="Alacritty"] $ws1
 assign [class="(?i)firefox"] $ws2
+assign [class="Chromium"] $ws3
 assign [class="Nautilus"] $ws3
 assign [class="thunderbird"] $ws4
 assign [class="obsidian"] $ws5
