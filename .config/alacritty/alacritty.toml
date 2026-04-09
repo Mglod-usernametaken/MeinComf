@@ -30,7 +30,7 @@ style = "Regular"
 # family = "Hermit"
 # style = "Regular"
 [font]
-size = 8.5
+size = 10
 
 [window]
 opacity = 0.90

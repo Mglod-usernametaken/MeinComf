@@ -20,6 +20,7 @@ alias pacleanup=' sudo pacman -Rns $(pacman -Qtdq)'
 alias os='figlet wednesday OS | lolcat'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias cs='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME status'
+alias fhf='history|fzf'
 
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 alias anime='~/ani-cli/ani-cli/ani-cli'
