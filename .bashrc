@@ -23,6 +23,7 @@ PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; h
 export HISTSIZE=10000
 export HISTFILESIZE=10000
 export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.config
 
 #######################################################################
 

@@ -169,8 +169,8 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 
-workspace $ws1 output DP-4
-workspace $ws2 output HDMI-0
+workspace $ws1 output HDMI-0
+workspace $ws2 output DP-4
 
 assign [class="Alacritty"] $ws1
 assign [class="(?i)firefox"] $ws2
@@ -240,6 +240,6 @@ strip_workspace_numbers yes
 for_window [class=".*"] border pixel 1
 exec nitrogen --restore
 #exec xrandr --output DVI-D-1 --primary --mode 1920x1080 --output HDMI-1 --mode 1920x1080 --right-of DVI-D-1
-exec xrandr --output DP-4 --primary --mode 2560x1600 --output HDMI-0 --mode 1920x1200 --right-of DP-4
+exec xrandr --output HDMI-0 --primary --mode 1920x1200 --output DP-4 --mode 2560x1600 --right-of HDMI-0 
 
 

@@ -47,3 +47,6 @@ function ToggleVirtTxt()
 end
 
 keymap.set("n", "<leader>X", ":lua ToggleVirtTxt()<CR>", { noremap = true, silent = true })
+
+-- Definitions
+keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP hover" })
