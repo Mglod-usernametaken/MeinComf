@@ -4,6 +4,7 @@
 #   \ \ /\ / / _ \/ _` | '_ \ / _ \/ __|/ _` |/ _` | | | | | | | \___ \
 #    \ V  V /  __/ (_| | | | |  __/\__ \ (_| | (_| | |_| | | |_| |___) |
 #     \_/\_/ \___|\__,_|_| |_|\___||___/\__,_|\__,_|\__, |  \___/|____/
+#                                                    |__/
 #
 alias cl='clear'
 alias l='[[ $(($RANDOM % 10)) == 0 ]] && fortune || exa --color=auto'
@@ -83,3 +84,4 @@ alias t='terraform'
 alias brodie-rebootson='soft-reboot'
 alias fuck-it='shutdown now'
 alias fhf='history|fzf'
+alias fzf='fzf --preview "batcat --color=always --style=numbers --line-range=:500 {}"'
