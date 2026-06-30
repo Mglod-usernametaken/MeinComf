@@ -240,6 +240,6 @@ strip_workspace_numbers yes
 for_window [class=".*"] border pixel 1
 exec nitrogen --restore
 #exec xrandr --output DVI-D-1 --primary --mode 1920x1080 --output HDMI-1 --mode 1920x1080 --right-of DVI-D-1
-exec xrandr --output HDMI-0 --primary --mode 1920x1200 --output DP-4 --mode 2560x1600 --right-of HDMI-0 
+exec xrandr --output HDMI-0 --primary --mode 1920x1200 --output DP-4 --mode 2560x1600 --scale 0.8x0.8 --right-of HDMI-0
 
 
