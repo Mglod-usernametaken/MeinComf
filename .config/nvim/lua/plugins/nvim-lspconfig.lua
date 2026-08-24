@@ -87,6 +87,9 @@ local config = function()
 		--capabilities = capabilities,
 		on_attach = on_attach,
 		settings = {
+            terraformls = {
+				ignoreSingleFileWarning = true,
+            },
 			terraform = {
 				ignoreSingleFileWarning = true,
 				analysis = {

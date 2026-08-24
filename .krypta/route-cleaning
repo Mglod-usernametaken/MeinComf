@@ -1,0 +1,10 @@
+#!/bin/bash
+
+TARGET="10.250.0.1"
+
+ip route | while read -r line; do
+  if echo "$line" | grep -q "$TARGET"; then
+    echo "Usuwam: $line"
+    sudo ip route del $line
+  fi
+done

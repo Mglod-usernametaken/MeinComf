@@ -1,0 +1,10 @@
+#! /bin/bash
+
+set -euo pipefail
+
+if [[ "$#" == 0 ]]; then
+	echo "podaj plik csv do otworzenia"
+	exit 1
+fi
+
+cat "$1" | column -t -s, | less -S
